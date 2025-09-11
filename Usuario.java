@@ -13,16 +13,16 @@ public class Usuario {
     private final UUID id;
     private String nome;
     private String email;
-    private String senhaHash; // não guardar senha em texto puro
+    private String senhaHash; 
     private Integer idade;
     private Double pesoKg;
     private Double alturaM;
-    private String sexo; // "M", "F", "Outro" - poderia ser enum
+    private String sexo; // "M", "F", "Outro" 
     private final List<Atividade> atividades = new ArrayList<>();
     private final List<Meta> metas = new ArrayList<>();
     private NotificacaoConfiguracao notificacaoConfiguracao = new NotificacaoConfiguracao();
 
-    // Construtor mínimo
+    // Construtor
     public Usuario(String nome, String email, String senhaHash) {
         if (nome == null || nome.isBlank() || email == null || email.isBlank() || senhaHash == null)
             throw new DomainException("Nome, email e senha são obrigatórios.");
@@ -107,3 +107,4 @@ public class Usuario {
         }
     }
 }
+
